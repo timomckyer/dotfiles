@@ -32,6 +32,7 @@ call plug#begin()
   Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
   Plug 'tomasiser/vim-code-dark'
+  Plug 'severin-lemaignan/vim-minimap'
   Plug 'jiangmiao/auto-pairs'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'rking/ag.vim'
@@ -46,15 +47,9 @@ set encoding=utf8
 set guifont=DroidSansMono_Nerd_Font:h11
 
 " Vim-Airline Configuration
-let g:airline_theme='aurora'
+let g:airline_theme='atomic'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
-
-" Theming
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
-let g:nord_uniform_status_lines = 1
-let g:nord_comment_brightness = 12
 
 " NerdTree
 let NERDTreeMinimalUI=1           " remove the 'press ? for help'
