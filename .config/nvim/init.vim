@@ -30,9 +30,11 @@ call plug#begin()
 
   Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
+  Plug 'skielbasa/vim-material-monokai'
   Plug 'tomasiser/vim-code-dark'
   Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
   Plug 'severin-lemaignan/vim-minimap'
+
   Plug 'jiangmiao/auto-pairs'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'rking/ag.vim'
@@ -46,12 +48,18 @@ set encoding=utf8
 set guifont=DroidSansMono_Nerd_Font:h11
 
 " Vim-Airline Configuration
-let g:airline_theme='codedark'
+let g:airline_theme='materialmonokai'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 
 " Theming
-colorscheme nord
+set background=dark
+set termguicolors
+colorscheme material-monokai
+
+let g:materialmonokai_custom_lint_indicators=0
+let g:materialmonokai_subtle_spell=1
+let g:materialmonokai_italic=1
 
 " NerdTree
 let NERDTreeMinimalUI=1           " remove the 'press ? for help'
