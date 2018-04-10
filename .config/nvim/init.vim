@@ -9,6 +9,7 @@ call plug#begin()
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'arcticicestudio/nord-vim'
+  Plug 'ayu-theme/ayu-vim'
   Plug 'tpope/vim-fugitive'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'airblade/vim-gitgutter'
@@ -51,10 +52,9 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 
 " Theming
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
-let g:nord_uniform_status_lines = 1
-let g:nord_comment_brightness = 12
+let ayucolor="dark"
+let ayucolor="mirage"
+colorscheme ayu
 
 " NerdTree
 let NERDTreeMinimalUI=1           " remove the 'press ? for help'
