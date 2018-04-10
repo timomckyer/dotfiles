@@ -33,6 +33,7 @@ call plug#begin()
   Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
   Plug 'tomasiser/vim-code-dark'
+  Plug 'severin-lemaignan/vim-minimap'
   Plug 'jiangmiao/auto-pairs'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'rking/ag.vim'
@@ -47,7 +48,7 @@ set encoding=utf8
 set guifont=DroidSansMono_Nerd_Font:h11
 
 " Vim-Airline Configuration
-let g:airline_theme='aurora'
+let g:airline_theme='atomic'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 
