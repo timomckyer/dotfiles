@@ -8,8 +8,6 @@ call plug#begin()
   Plug 'bling/vim-airline'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'arcticicestudio/nord-vim'
-  Plug 'ayu-theme/ayu-vim'
   Plug 'tpope/vim-fugitive'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'airblade/vim-gitgutter'
@@ -33,12 +31,12 @@ call plug#begin()
   Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
   Plug 'tomasiser/vim-code-dark'
+  Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
   Plug 'severin-lemaignan/vim-minimap'
   Plug 'jiangmiao/auto-pairs'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'rking/ag.vim'
   Plug 'gioele/vim-autoswap'
-  Plug 'dracula/vim'
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1
@@ -48,14 +46,12 @@ set encoding=utf8
 set guifont=DroidSansMono_Nerd_Font:h11
 
 " Vim-Airline Configuration
-let g:airline_theme='atomic'
+let g:airline_theme='codedark'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 
 " Theming
-let ayucolor="dark"
-let ayucolor="mirage"
-colorscheme ayu
+colorscheme nord
 
 " NerdTree
 let NERDTreeMinimalUI=1           " remove the 'press ? for help'
