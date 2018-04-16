@@ -32,6 +32,8 @@ call plug#begin()
 
   Plug 'skielbasa/vim-material-monokai'
   Plug 'tomasiser/vim-code-dark'
+  Plug 'ayu-theme/ayu-vim'
+  Plug 'jacoborus/tender.vim'
   Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
   Plug 'severin-lemaignan/vim-minimap'
 
@@ -53,9 +55,13 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 
 " Theming
+"set termguicolors     " enable true colors support
+let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
 set background=dark
-set termguicolors
-colorscheme material-monokai
+"set termguicolors
+"colorscheme material-monokai
 
 let g:materialmonokai_custom_lint_indicators=0
 let g:materialmonokai_subtle_spell=1
