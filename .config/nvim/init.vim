@@ -1,7 +1,8 @@
 call plug#begin()
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  " Autocomplete stuff
+  Plug 'ncm2/ncm2'
+  "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'honza/vim-snippets'
-  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
   " Plugin outside ~/.vim/plugged with post-update hook
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -14,7 +15,6 @@ call plug#begin()
   Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
   Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdtree'
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'ervandew/supertab'
   Plug 'powerline/powerline'
 
@@ -30,38 +30,37 @@ call plug#begin()
 
   Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
-  Plug 'skielbasa/vim-material-monokai'
-  Plug 'tomasiser/vim-code-dark'
-  Plug 'ayu-theme/ayu-vim'
-  Plug 'jacoborus/tender.vim'
-  Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+  " Core editor tools
+  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'severin-lemaignan/vim-minimap'
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
   Plug 'jiangmiao/auto-pairs'
-  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'rking/ag.vim'
   Plug 'gioele/vim-autoswap'
+
+  " Theme plugins
+  Plug 'ayu-theme/ayu-vim'
+  Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 call plug#end()
 
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
+
+" More theming stuff
+set termguicolors
+let ayucolor="mirage"
+colorscheme ayu
 
 " For the icons
 set encoding=utf8
 set guifont=DroidSansMono_Nerd_Font:h11
 
 " Vim-Airline Configuration
-let g:airline_theme='materialmonokai'
+let g:airline_theme='atomic'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 
-" Theming
-"set termguicolors     " enable true colors support
-let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
-set background=dark
-"set termguicolors
-"colorscheme material-monokai
 
 let g:materialmonokai_custom_lint_indicators=0
 let g:materialmonokai_subtle_spell=1
@@ -74,7 +73,6 @@ let NERDTreeAutoDeleteBuffer=1    " auto remove deleted file from buffer
 
 " Show linenumbers
 set relativenumber
-set ruler
 
 " Set Proper Tabs
 set tabstop=4
@@ -88,7 +86,7 @@ set expandtab
 set smarttab
 set softtabstop=2
 "set shiftwidth=2
-set cursorline
+"set cursorline
 
 set incsearch
 set hlsearch
