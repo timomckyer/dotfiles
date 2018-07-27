@@ -4,6 +4,17 @@ call plug#begin()
   "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'honza/vim-snippets'
 
+  if has('nvim')
+      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  else
+      Plug 'Shougo/deoplete.nvim'
+      Plug 'roxma/nvim-yarp'
+      Plug 'roxma/vim-hug-neovim-rpc'
+  endif
+
+  Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+
   " Plugin outside ~/.vim/plugged with post-update hook
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'bling/vim-airline'
@@ -42,25 +53,30 @@ call plug#begin()
 
   " Theme plugins
   Plug 'ayu-theme/ayu-vim'
+  Plug 'hhsnopek/vim-firewatch'
+  Plug 'rakr/vim-two-firewatch'
   Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 call plug#end()
 
-"let g:deoplete#enable_at_startup = 1
+let g:python3_host_prog = '~/.pyenv/versions/neovim3/bin/python'
+let g:deoplete#enable_at_startup = 1
 
-" More theming stuff
+" Theme stuff
 set termguicolors
-let ayucolor="mirage"
-colorscheme ayu
+set background=dark " or light if you prefer the light version
+let g:two_firewatch_italics=1
+colorscheme firewatch
+
+let g:airline_theme='aurora'
 
 " For the icons
 set encoding=utf8
 set guifont=DroidSansMono_Nerd_Font:h11
 
 " Vim-Airline Configuration
-let g:airline_theme='atomic'
+"let g:airline_theme='atomic'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
-
 
 let g:materialmonokai_custom_lint_indicators=0
 let g:materialmonokai_subtle_spell=1
