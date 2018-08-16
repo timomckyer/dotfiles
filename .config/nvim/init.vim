@@ -56,9 +56,12 @@ let NERDTreeMinimalUI=1           " remove the 'press ? for help'
 let NERDTreeShowHidden=1          " show hidden files by default
 let NERDTreeAutoDeleteBuffer=1    " auto remove deleted file from buffer
 
+colorscheme codedark
+
 " Show linenumbers
 set relativenumber
-set ruler
+"set ruler
+set termguicolors
 
 " Set Proper Tabs
 set tabstop=4
