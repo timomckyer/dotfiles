@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="miloshadzic"
+ZSH_THEME="agnoster"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -90,6 +90,29 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+# Settings for PowerLevel9k
+POWERLEVEL9K_CUSTOM_JAVASCRIPT="echo -n '\ue781' JavaScript"
+POWERLEVEL9K_CUSTOM_JAVASCRIPT_FOREGROUND="black"
+POWERLEVEL9K_CUSTOM_JAVASCRIPT_BACKGROUND="yellow"
+
+# Customise the Powerlevel9k prompts
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+  dir
+  custom_javascript
+  vcs
+  newline
+  status
+)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
+# Create a custom JavaScript prompt section
+POWERLEVEL9K_CUSTOM_JAVASCRIPT="echo -n '\ue781' JavaScript"
+POWERLEVEL9K_CUSTOM_JAVASCRIPT_FOREGROUND="black"
+POWERLEVEL9K_CUSTOM_JAVASCRIPT_BACKGROUND="yellow"
+# Load Nerd Fonts with Powerlevel9k theme for Zsh
+POWERLEVEL9K_MODE='nerdfont-complete'
+source ~/powerlevel9k/powerlevel9k.zsh-theme
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -100,3 +123,14 @@ alias nrd="npm run dev"
 
 export NVM_DIR="/Users/tmckyer/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+POWERLEVEL9K_MODE='nerdfont-complete'
+source  ~/powerlevel9k/powerlevel9k.zsh-theme
