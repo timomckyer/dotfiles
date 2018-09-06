@@ -38,6 +38,7 @@ call plug#end()
 
 let g:UltiSnipsExpandTrigger = "<C-j>"
 
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 set completeopt=menu,preview
 
 "
