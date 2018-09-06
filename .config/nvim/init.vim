@@ -1,96 +1,65 @@
 call plug#begin()
-  Plug 'Shougo/deoplete.nvim'
+  " Intellisense plugins/language/framework support plugins
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'}
   Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-
   Plug 'honza/vim-snippets'
-  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  Plug 'othree/jspc.vim'
+  Plug 'SirVer/ultisnips'
+  Plug 'Raimondi/delimitMate'
+  Plug 'Shougo/vimproc.vim', {'do': 'make'}
+  Plug 'neoclide/coc.nvim', {'do': 'yarn install'}
 
-  " Plugin outside ~/.vim/plugged with post-update hook
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'wincent/command-t'
-  Plug 'bling/vim-airline'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'arcticicestudio/nord-vim'
-  Plug 'tpope/vim-fugitive'
+  Plug 'neoclide/vim-jsx-improve'
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
+  " Syntax/editing plugins
+  Plug 'bronson/vim-trailing-whitespace'
+  Plug 'elzr/vim-json'
+  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  Plug 'gioele/vim-autoswap'
   Plug 'editorconfig/editorconfig-vim'
+
+  " Appearance plugins
   Plug 'airblade/vim-gitgutter'
   Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
   Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdtree'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'powerline/powerline'
+  Plug 'bling/vim-airline'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'tpope/vim-fugitive'
 
-  " Language/framework & common stuff
-  Plug 'pangloss/vim-javascript'
-  Plug 'bronson/vim-trailing-whitespace'
-  Plug 'jelera/vim-javascript-syntax'
-  Plug 'othree/javascript-libraries-syntax.vim'
-  Plug 'posva/vim-vue'
-  Plug 'mxw/vim-jsx'
-  Plug 'quramy/tsuquyomi'
-  Plug 'elzr/vim-json'
-  Plug 'nikvdp/ejs-syntax'
-  Plug 'cakebaker/scss-syntax.vim'
-
-  Plug 'scrooloose/syntastic'
-  Plug 'Valloric/YouCompleteMe'
-  Plug 'Raimondi/delimitMate'
-
-  Plug 'ap/vim-css-color'
-  Plug 'hail2u/vim-css3-syntax'
-  Plug 'wavded/vim-stylus'
-  Plug 'mattn/emmet-vim'
-  Plug 'elzr/vim-json'
-  Plug 'othree/html5.vim'
-
-  Plug 'Shougo/vimproc.vim', {'do': 'make'}
-
-  Plug 'tomasiser/vim-code-dark'
-  Plug 'severin-lemaignan/vim-minimap'
-  Plug 'jiangmiao/auto-pairs'
+  " General plugins
   Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'rking/ag.vim'
-  Plug 'gioele/vim-autoswap'
-  Plug 'dracula/vim'
-  Plug 'dikiaap/minimalist'
-  Plug 'nightsense/carbonized'
-  Plug 'chase/focuspoint-vim'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end()
 
-" Important completion stuff
-let g:deoplete#enable_at_startup = 1
-if !exists('g:deoplete#omni#input_patterns')
-  let g:deoplete#omni#input_patterns = {}
-endif
+let g:UltiSnipsExpandTrigger = "<C-j>"
 
-" omnifuncs
-augroup omnifuncs
-  autocmd!
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-augroup end
+set completeopt=menu,preview
+
+"
+" use <tab> for trigger completion and navigate next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
 " tern
-if exists('g:plugs["tern_for_vim"]')
-  let g:tern_show_argument_hints = 'on_hold'
-  let g:tern_show_signature_in_pum = 1
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
-endif
+"autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
 
-" deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" tern
-autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
+" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" let g:deoplete#disable_auto_complete = 1
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " For the icons
+set display+=lastline
+set encoding=utf-8
+set linebreak
+set scrolloff=1
+set sidescrolloff=5
+set wrap
 set encoding=UTF-8
-"set guifont=DroidSansMono_Nerd_Font:h11
 
 " Vim-Airline Configuration
 let g:airline_theme='base16_chalk'
