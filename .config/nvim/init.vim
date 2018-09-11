@@ -30,6 +30,7 @@ call plug#begin()
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'tpope/vim-fugitive'
+  Plug 'sts10/vim-pink-moon'
 
   " General plugins
   Plug 'ctrlpvim/ctrlp.vim'
@@ -72,7 +73,7 @@ let NERDTreeMinimalUI=1           " remove the 'press ? for help'
 let NERDTreeShowHidden=1          " show hidden files by default
 let NERDTreeAutoDeleteBuffer=1    " auto remove deleted file from buffer
 
-colorscheme darcula
+colorscheme pink-moon
 
 " These are the basic settings to get the font to work (required):
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
@@ -112,7 +113,7 @@ set expandtab
 set smarttab
 set softtabstop=2
 "set shiftwidth=2
-set cursorline
+"set cursorline
 
 set incsearch
 set hlsearch
