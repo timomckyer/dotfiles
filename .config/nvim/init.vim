@@ -73,7 +73,7 @@ let NERDTreeMinimalUI=1           " remove the 'press ? for help'
 let NERDTreeShowHidden=1          " show hidden files by default
 let NERDTreeAutoDeleteBuffer=1    " auto remove deleted file from buffer
 
-colorscheme pink-moon
+colorscheme srcery
 
 " These are the basic settings to get the font to work (required):
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
