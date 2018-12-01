@@ -13,8 +13,10 @@ call plug#begin()
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
   " Syntax/editing plugins
+  Plug 'posva/vim-vue'
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'elzr/vim-json'
+  Plug 'avakhov/vim-yaml'
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   Plug 'gioele/vim-autoswap'
   Plug 'editorconfig/editorconfig-vim'
@@ -64,7 +66,7 @@ set wrap
 set encoding=UTF-8
 
 " Vim-Airline Configuration
-let g:airline_theme='base16_chalk'
+let g:airline_theme='aurora'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -73,7 +75,7 @@ let NERDTreeMinimalUI=1           " remove the 'press ? for help'
 let NERDTreeShowHidden=1          " show hidden files by default
 let NERDTreeAutoDeleteBuffer=1    " auto remove deleted file from buffer
 
-colorscheme srcery
+colorscheme elflord
 
 " These are the basic settings to get the font to work (required):
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
@@ -99,7 +101,7 @@ let g:ale_lint_on_text_changed = 0
 " Show linenumbers
 set relativenumber
 "set ruler
-set termguicolors
+"set termguicolors
 
 " Set Proper Tabs
 set tabstop=4
