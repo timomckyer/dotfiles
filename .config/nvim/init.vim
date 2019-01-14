@@ -13,6 +13,9 @@ call plug#begin()
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
   " Syntax/editing plugins
+  Plug 'scrooloose/syntastic'
+  Plug 'scrooloose/nerdcommenter'
+  Plug 'tpope/vim-surround'
   Plug 'posva/vim-vue'
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'elzr/vim-json'
@@ -66,7 +69,7 @@ set wrap
 set encoding=UTF-8
 
 " Vim-Airline Configuration
-let g:airline_theme='aurora'
+let g:airline_theme='atomic'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -76,6 +79,7 @@ let NERDTreeShowHidden=1          " show hidden files by default
 let NERDTreeAutoDeleteBuffer=1    " auto remove deleted file from buffer
 
 colorscheme elflord
+"set background=dark
 
 " These are the basic settings to get the font to work (required):
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
@@ -121,6 +125,35 @@ set incsearch
 set hlsearch
 set hlsearch
 set hlsearch
+
+
+" Editing controls
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+
+" End of editing controls
 
 " Leader Leader creates visual linewise
 nnoremap <Leader><Leader> V

@@ -97,6 +97,7 @@ alias nv="nvim"
 alias v="vim"
 alias nrd="npm run dev"
 alias lc='colorls -lA --sd'
+alias projects='cd ~/Development/projects'
 
 export NVM_DIR="/Users/tmckyer/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
