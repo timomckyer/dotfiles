@@ -26,6 +26,7 @@ call plug#begin()
 
   " Appearance plugins
   Plug 'airblade/vim-gitgutter'
+  Plug 'lifepillar/vim-solarized8'
   Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
   Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdtree'
@@ -78,8 +79,8 @@ let NERDTreeMinimalUI=1           " remove the 'press ? for help'
 let NERDTreeShowHidden=1          " show hidden files by default
 let NERDTreeAutoDeleteBuffer=1    " auto remove deleted file from buffer
 
-colorscheme elflord
-"set background=dark
+colorscheme solarized8
+set background=dark
 
 " These are the basic settings to get the font to work (required):
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
@@ -104,8 +105,7 @@ let g:ale_lint_on_text_changed = 0
 
 " Show linenumbers
 set relativenumber
-"set ruler
-"set termguicolors
+set termguicolors
 
 " Set Proper Tabs
 set tabstop=4
