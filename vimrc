@@ -1,20 +1,25 @@
 call plug#begin()
   Plug 'editorconfig/editorconfig-vim'
+  Plug 'pangloss/vim-javascript'
+  Plug 'mxw/vim-jsx'
 
   Plug 'airblade/vim-gitgutter'
+  Plug 'tpope/vim-fugitive'
   Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
-  Plug 'ryanoasis/vim-devicons'
+
   Plug 'scrooloose/nerdtree'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+  Plug 'bluz71/vim-moonfly-colors'
   Plug 'powerline/powerline'
   Plug 'bling/vim-airline'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'tpope/vim-fugitive'
-  Plug 'chriskempson/base16-vim'
 call plug#end()
 
-colorscheme base16-atelier-estuary
+colorscheme moonfly
+
+let g:lightline = { 'colorscheme': 'moonfly' }
 
 " Nerdtree
 let g:NERDTreeWinSize = 50
