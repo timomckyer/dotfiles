@@ -2,27 +2,32 @@ call plug#begin()
   Plug 'editorconfig/editorconfig-vim'
   Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
+  Plug 'mattn/emmet-vim'
 
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
   Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
-
   Plug 'scrooloose/nerdtree'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-  Plug 'bluz71/vim-moonfly-colors'
   Plug 'powerline/powerline'
-  Plug 'bling/vim-airline'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'flazz/vim-colorschemes'
 call plug#end()
 
-colorscheme moonfly
+colorscheme Chasing_Logic 
+set termguicolors
+set encoding=UTF-8
+syntax on
 
-let g:lightline = { 'colorscheme': 'moonfly' }
+let base16colorspace=256
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme='badwolf'
 
 " Nerdtree
-let g:NERDTreeWinSize = 50
+let g:NERDTreeWinSize = 45
 let laststatus=2
 map <C-n> :NERDTreeToggle<CR>
 
@@ -30,8 +35,7 @@ set mouse=a
 set clipboard=unnamed
 set tabstop=4
 set shiftwidth=4
-set termguicolors
-set number
+set relativenumber
 
 filetype plugin indent on
 set autoindent
@@ -39,6 +43,7 @@ set expandtab
 set smarttab
 set softtabstop=2
 
+" File actions
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>wq :wq<cr>
