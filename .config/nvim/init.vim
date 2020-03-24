@@ -28,11 +28,19 @@ call plug#begin('~/.config/nvim')
   Plug 'vim-airline/vim-airline-themes'
 
   " Themes
- Plug 'chriskempson/base16-vim'
+  Plug 'chriskempson/base16-vim'
   Plug 'flazz/vim-colorschemes'
 call plug#end()
 
-let g:deoplete#enable_at_startup = 1
+" Syntax completion
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+set completeopt=menu,preview
+
+" Use <tab> for trigger completion and navigate next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -120,6 +128,7 @@ nnoremap <leader>t :wq<cr>
 
 " Nerdtree controls
 map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeWinSize = 40
 
 " Window movement
 nnoremap <C-j> <C-w>j
@@ -127,5 +136,3 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-let g:NERDTreeWinSize = 40
- 

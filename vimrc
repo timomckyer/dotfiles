@@ -16,13 +16,15 @@ call plug#begin()
   Plug 'flazz/vim-colorschemes'
 call plug#end()
 
+" Core?
 colorscheme Chasing_Logic 
+let base16colorspace=256
 set termguicolors
+set relativenumber
 set encoding=UTF-8
 syntax on
 
-let base16colorspace=256
-
+" Airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme='badwolf'
 
@@ -35,7 +37,6 @@ set mouse=a
 set clipboard=unnamed
 set tabstop=4
 set shiftwidth=4
-set relativenumber
 
 filetype plugin indent on
 set autoindent
